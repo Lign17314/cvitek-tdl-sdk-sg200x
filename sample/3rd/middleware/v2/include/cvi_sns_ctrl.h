@@ -1,7 +1,7 @@
 #ifndef __CVI_SNS_CTRL_H__
 #define __CVI_SNS_CTRL_H__
 
-#include <linux/cvi_comm_cif.h>
+#include <linux/cif_uapi.h>
 #include <linux/cvi_errno.h>
 #include <linux/cvi_type.h>
 #include "cvi_debug.h"
@@ -117,13 +117,13 @@ typedef struct _ISP_SNS_OBJ_S {
 
 extern ISP_SNS_OBJ_S stSnsBG0808_Obj;
 extern ISP_SNS_OBJ_S stSnsBF2253L_Obj;
-extern ISP_SNS_OBJ_S stSnsCV2003_Obj;
 extern ISP_SNS_OBJ_S stSnsCV4001_Obj;
 extern ISP_SNS_OBJ_S stSnsGc02m1b_Obj;
 extern ISP_SNS_OBJ_S stSnsGc0312_Obj;
 extern ISP_SNS_OBJ_S stSnsGc0329_Obj;
 extern ISP_SNS_OBJ_S stSnsGc1054_Obj;
 extern ISP_SNS_OBJ_S stSnsGc1084_Obj;
+extern ISP_SNS_OBJ_S stSnsGc1084_Slave_Obj;
 extern ISP_SNS_OBJ_S stSnsGc2053_Obj;
 extern ISP_SNS_OBJ_S stSnsGc2053_Slave_Obj;
 extern ISP_SNS_OBJ_S stSnsGc2053_1l_Obj;
@@ -154,7 +154,6 @@ extern ISP_SNS_OBJ_S stSnsPICO384_Obj;
 extern ISP_SNS_OBJ_S stSnsPICO640_Obj;
 extern ISP_SNS_OBJ_S stSnsPR2020_Obj;
 extern ISP_SNS_OBJ_S stSnsPR2100_Obj;
-extern ISP_SNS_OBJ_S stSnsPs5268_Obj;
 extern ISP_SNS_OBJ_S stSnsSC035GS_Obj;
 extern ISP_SNS_OBJ_S stSnsSC035GS_1L_Obj;
 extern ISP_SNS_OBJ_S stSnsSC035HGS_Obj;
@@ -175,14 +174,19 @@ extern ISP_SNS_OBJ_S stSnsSC3335_Slave_Obj;
 extern ISP_SNS_OBJ_S stSnsSC3336_Obj;
 extern ISP_SNS_OBJ_S stSnsSC3336P_Obj;
 extern ISP_SNS_OBJ_S stSnsSC2331_1L_Obj;
+extern ISP_SNS_OBJ_S stSnsSC2331_1L_Slave_Obj;
+extern ISP_SNS_OBJ_S stSnsSC2331_1L_Slave1_Obj;
 extern ISP_SNS_OBJ_S stSnsSC2335_Obj;
 extern ISP_SNS_OBJ_S stSnsSC2336_Obj;
+extern ISP_SNS_OBJ_S stSnsSC2336_Slave_Obj;
+extern ISP_SNS_OBJ_S stSnsSC2336_Slave1_Obj;
 extern ISP_SNS_OBJ_S stSnsSC2336_1L_Obj;
 extern ISP_SNS_OBJ_S stSnsSC2336P_Obj;
 extern ISP_SNS_OBJ_S stSnsSC2336P_1L_Obj;
 extern ISP_SNS_OBJ_S stSnsSC223A_1L_Obj;
 extern ISP_SNS_OBJ_S stSnsSC4210_Obj;
 extern ISP_SNS_OBJ_S stSnsSC4336_Obj;
+extern ISP_SNS_OBJ_S stSnsSC4336P_Obj;
 extern ISP_SNS_OBJ_S stSnsSC5336_2L_Obj;
 extern ISP_SNS_OBJ_S stSnsSC8238_Obj;
 extern ISP_SNS_OBJ_S stSnsF23_Obj;

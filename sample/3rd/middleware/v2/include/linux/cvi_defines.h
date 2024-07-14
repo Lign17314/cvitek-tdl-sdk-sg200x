@@ -20,8 +20,8 @@ extern "C" {
 
 #define CVI_CHIP_NAME "CV181X"
 
-#ifndef __CV181X__
-#define __CV181X__
+#ifndef  __SOC_MARS__
+#define  __SOC_MARS__
 #endif
 
 #define CVI_CHIP_TEST  0x0
@@ -232,9 +232,11 @@ extern "C" {
  * multiplied by VI_MAX_CHN_NUM, because all VI devices
  * can't work at mode of 4 channels at the same time.
  */
-#define VI_MAX_DEV_NUM            3
+#define VI_MAX_PHY_DEV_NUM        3
+#define VI_MAX_VIR_DEV_NUM        2
+#define VI_MAX_DEV_NUM            (VI_MAX_PHY_DEV_NUM + VI_MAX_VIR_DEV_NUM)
 #define VI_MAX_PHY_PIPE_NUM       4
-#define VI_MAX_VIR_PIPE_NUM       0
+#define VI_MAX_VIR_PIPE_NUM       2
 #define VI_MAX_PIPE_NUM           (VI_MAX_PHY_PIPE_NUM + VI_MAX_VIR_PIPE_NUM)
 #define VI_MAX_WDR_NUM            1
 
@@ -254,25 +256,25 @@ extern "C" {
 
 #define VI_DEV_MIN_WIDTH        120
 #define VI_DEV_MIN_HEIGHT       120
-#define VI_DEV_MAX_WIDTH        2688
-#define VI_DEV_MAX_HEIGHT       1944
+#define VI_DEV_MAX_WIDTH        4608
+#define VI_DEV_MAX_HEIGHT       4608
 #define VI_FPN_MAX_WIDTH        4096
 #define VI_FPN_MAX_HEIGHT       VI_DEV_MAX_HEIGHT
 
 #define VI_PIPE_OFFLINE_MIN_WIDTH           120
 #define VI_PIPE_OFFLINE_MIN_HEIGHT          120
-#define VI_PIPE_OFFLINE_MAX_WIDTH           2688
-#define VI_PIPE_OFFLINE_MAX_HEIGHT          1944
+#define VI_PIPE_OFFLINE_MAX_WIDTH           4096
+#define VI_PIPE_OFFLINE_MAX_HEIGHT          2160
 
 #define VI_PIPE_ONLINE_MIN_WIDTH            120
 #define VI_PIPE_ONLINE_MIN_HEIGHT           120
 #define VI_PIPE_ONLINE_MAX_WIDTH            2688
 #define VI_PIPE_ONLINE_MAX_HEIGHT           1944
 
-#define VI_PIPE0_MAX_WIDTH                  2688
-#define VI_PIPE0_MAX_HEIGHT                 1944
-#define VI_PIPE1_MAX_WIDTH                  2688
-#define VI_PIPE1_MAX_HEIGHT                 1944
+#define VI_PIPE0_MAX_WIDTH                  4096
+#define VI_PIPE0_MAX_HEIGHT                 2160
+#define VI_PIPE1_MAX_WIDTH                  4096
+#define VI_PIPE1_MAX_HEIGHT                 2160
 #define VI_PIPE2_MAX_WIDTH                  2688
 #define VI_PIPE2_MAX_HEIGHT                 1944
 #define VI_PIPE3_MAX_WIDTH                  2688
@@ -284,13 +286,13 @@ extern "C" {
 
 #define VI_PHYCHN_OFFLINE_MIN_WIDTH         120
 #define VI_PHYCHN_OFFLINE_MIN_HEIGHT        120
-#define VI_PHYCHN_OFFLINE_MAX_WIDTH         2688
-#define VI_PHYCHN_OFFLINE_MAX_HEIGHT        1944
+#define VI_PHYCHN_OFFLINE_MAX_WIDTH         4608
+#define VI_PHYCHN_OFFLINE_MAX_HEIGHT        4608
 
 #define VI_PHYCHN_ONLINE_MIN_WIDTH          120
 #define VI_PHYCHN_ONLINE_MIN_HEIGHT         120
-#define VI_PHYCHN_ONLINE_MAX_WIDTH          2688
-#define VI_PHYCHN_ONLINE_MAX_HEIGHT         1944
+#define VI_PHYCHN_ONLINE_MAX_WIDTH          2048
+#define VI_PHYCHN_ONLINE_MAX_HEIGHT         4608
 
 #define VI_CMP_PARAM_SIZE                   152
 
@@ -335,12 +337,12 @@ extern "C" {
 #define VPSS_DEV_0               0
 #define VPSS_DEV_1               1
 #define VPSS_MAX_GRP_NUM         16
-#define VPSS_ONLINE_NUM          3
+#define VPSS_ONLINE_NUM          5
 #define VPSS_ONLINE_GRP_0        0
 #define VPSS_ONLINE_GRP_1        1
 #define VPSS_ONLINE_GRP_2        2
 
-#ifdef __CV181X__
+#ifdef  __SOC_MARS__
 #define VPSS_MAX_PHY_CHN_NUM     4	/* sc_d, sc_v1, sc_v2, sc_v3 */
 #else
 #define VPSS_MAX_PHY_CHN_NUM     3	/* sc_d, sc_v1, sc_v2 */

@@ -36,22 +36,16 @@ typedef enum {
 	CVI_EFUSE_LOCK_LAST
 } CVI_EFUSE_LOCK_E;
 
-typedef enum {
-	CVI_EFUSE_SECUREBOOT_SIGN = 1,
-	CVI_EFUSE_SECUREBOOT_SIGN_AND_ENCRYPT = 2,
-} CVI_EFUSE_SECUREBOOT_E;
-
 CVI_S32 CVI_MISC_GetChipSNSize(CVI_U32 *pu32SNSize);
 CVI_S32 CVI_MISC_GetChipSN(CVI_U8 *pu8SN, CVI_U32 u32SNSize);
 
 CVI_S32 CVI_MISC_StartPMThread(void);
 CVI_S32 CVI_MISC_StopPMThread(void);
-
 /** <!-- [EFUSE] */
 CVI_S32 CVI_EFUSE_GetSize(CVI_EFUSE_AREA_E area, CVI_U32 *size);
 CVI_S32 CVI_EFUSE_Read(CVI_EFUSE_AREA_E area, CVI_U8 *buf, CVI_U32 buf_size);
 CVI_S32 CVI_EFUSE_Write(CVI_EFUSE_AREA_E area, const CVI_U8 *buf, CVI_U32 buf_size);
-CVI_S32 CVI_EFUSE_EnableSecureBoot(CVI_EFUSE_SECUREBOOT_E select);
+CVI_S32 CVI_EFUSE_EnableSecureBoot(void);
 CVI_S32 CVI_EFUSE_IsSecureBootEnabled(void);
 CVI_S32 CVI_EFUSE_EnableFastBoot(void);
 CVI_S32 CVI_EFUSE_IsFastBootEnabled(void);

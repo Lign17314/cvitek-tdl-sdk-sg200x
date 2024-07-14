@@ -34,7 +34,8 @@ extern "C" {
 #define VO_INTF_MIPI_SLAVE (0x01L << 14)
 #define VO_INTF_HDMI (0x01L << 15)
 #define VO_INTF_I80 (0x01L << 16)
-#define VO_INTF_HW_MCU (0x01L << 17)
+#define VO_INTF_LVDS (0x01L << 17)
+#define VO_INTF_HW_MCU (0x01L << 18)
 
 #define VO_GAMMA_NODENUM 65
 
@@ -291,17 +292,23 @@ struct VO_LVDS_CTL_PIN_S {
 
 /* Define LVDS's config
  *
- * lvds_vesa_mode: true for VESA mode; false for JEIDA mode
+ * out_bits: 6 bit, 8 bit or 10 bit
+ * mode: LVDS_MODE_VESA for VESA mode; LVDS_MODE_JEIDA for JEIDA mode
+ * chn_num: 2 for dual link, 1 and others for single link
  * data_big_endian: true for big endian; true for little endian
  * lane_id: lane mapping, -1 no used
  * lane_pn_swap: lane pn-swap if true
+ * pixelclock: pixel clock
  */
 typedef struct _VO_LVDS_ATTR_S {
 	enum VO_LVDS_OUT_BIT_E out_bits;
-	uint8_t chn_num;
+	enum VO_LVDS_MODE_E mode;
+	CVI_U8 chn_num;
 	CVI_BOOL data_big_endian;
 	enum VO_LVDS_LANE_ID lane_id[VO_LVDS_LANE_MAX];
 	CVI_BOOL lane_pn_swap[VO_LVDS_LANE_MAX];
+	struct _VO_SYNC_INFO_S stSyncInfo;
+	uint32_t pixelclock;
 	struct VO_LVDS_CTL_PIN_S backlight_pin;
 	enum VO_LVDS_MODE_E lvds_vesa_mode;
 } VO_LVDS_ATTR_S;

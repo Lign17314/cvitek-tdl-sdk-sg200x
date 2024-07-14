@@ -56,7 +56,6 @@ typedef unsigned int            CVI_SIZE_T;
 
 #define CVI_NULL                0L
 #define CVI_SUCCESS             0
-#define CVI_SUCCESS_ALL_CHN     1
 #define CVI_FAILURE             (-1)
 #define CVI_FAILURE_ILLEGAL_PARAM (-2)
 #define CVI_TRUE                1

@@ -145,7 +145,7 @@ CVI_S32 CVI_VPSS_GetGrpProcAmp(VPSS_GRP VpssGrp, PROC_AMP_E type, CVI_S32 *value
  * @param value(In), value.
  * @return CVI_S32 Return CVI_SUCCESS if succeed.
  */
-CVI_S32 CVI_VPSS_SetGrpProcAmp(VPSS_GRP VpssGrp, PROC_AMP_E type, const CVI_S32 value);
+CVI_S32 CVI_VPSS_SetGrpProcAmp(VPSS_GRP VpssGrp, PROC_AMP_E type, CVI_S32 value);
 
 /* Apply the settings of scene from bin
  *
